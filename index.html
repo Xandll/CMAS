@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>CMAS** Tauchkurs Quiz</title>
+  <style>
+    body { margin:0;padding:0; font-family:Arial,sans-serif;
+      background:#eef6fc; color:#333 }
+    .container { max-width:600px; margin:40px auto; padding:0 20px }
+    header { text-align:center; margin-bottom:20px }
+    header h1 { margin:0; font-size:2rem; color:#0077b6 }
+    header p  { margin:5px 0 0; color:#555 }
+    .stats-row { display:flex; justify-content:space-between;
+      margin-bottom:10px }
+    .stat { flex:1; text-align:center }
+    .stat span { display:block; font-size:1.3rem;
+      font-weight:bold; color:#0077b6 }
+    .stat small { color:#555 }
+    .progress-container { margin-bottom:20px }
+    .progress-bar { width:100%; height:10px;
+      background:#ddd; border-radius:5px; overflow:hidden }
+    #progress-fill { height:100%; width:0;
+      background:#0077b6; transition:width .3s }
+    .quiz-card { background:#fff; border-radius:8px;
+      box-shadow:0 2px 8px rgba(0,0,0,.1); padding:20px }
+    .question { font-size:1.2rem; font-weight:600;
+      margin-bottom:15px }
+    .answers { display:flex; flex-direction:column;
+      gap:10px }
+    .answers button { background:#f9f9f9;
+      border:1px solid #ccc; border-radius:5px;
+      padding:10px; font-size:1rem; text-align:left;
+      cursor:pointer; transition:background .2s,
+      border-color .2s }
+    .answers button:hover { background:#e0f0ff }
+    .answers button.correct { background:#e6ffed;
+      border-color:#2ecc71 }
+    .answers button.incorrect { background:#ffe6e6;
+      border-color:#e74c3c }
+    .feedback { margin-top:15px; padding:10px;
+      border-radius:5px; font-weight:bold;
+      display:none }
+    .feedback.show.correct { display:block;
+      background:#e6ffed; color:#27ae60 }
+    .feedback.show.incorrect { display:block;
+      background:#ffe6e6; color:#c0392b }
+    .controls { display:flex; justify-content:space-between;
+      margin-top:20px }
+    .controls button { padding:10px 20px;
+      font-size:1rem; border:none; border-radius:5px;
+      color:#fff; cursor:pointer; transition:background .2s }
+    #next { background:#0077b6 }
+    #next:disabled { background:#aaa; cursor:not-allowed }
+    #restart { background:#e74c3c; display:none }
+    #retry-wrong { background:#f39c12; display:none }
+    .controls button:hover:not(:disabled) { filter:brightness(1.1) }
+    .complete { display:none; text-align:center;
+      margin-top:20px; font-size:1.1rem;
+      color:#0077b6 }
+    .hint { margin-top:10px; font-size:.9rem;
+      color:#555; text-align:center }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>CMAS** Quiz</h1>
+      <p>Teste dein Tauchwissen</p>
+    </header>
+    <div class="stats-row">
+      <div class="stat">
+        <span id="stat-answered">0</span><small>Beantwortet</small>
+      </div>
+      <div class="stat">
+        <span id="stat-correct">0</span><small>Richtig</small>
+      </div>
+      <div class="stat">
+        <span id="stat-incorrect">0</span><small>Falsch</small>
+      </div>
+      <div class="stat">
+        <span id="stat-remaining">0</span><small>Verbleibend</small>
+      </div>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div id="progress-fill"></div>
+      </div>
+    </div>
+    <div class="quiz-card">
+      <p class="question" id="question">Lade Fragen…</p>
+      <div class="answers" id="answers"></div>
+      <div class="feedback" id="feedback"></div>
+      <div class="controls">
+        <button id="next" disabled>Nächste Frage</button>
+        <button id="retry-wrong">Falsch beantwortete wiederholen</button>
+        <button id="restart">Neu starten</button>
+      </div>
+      <div class="complete" id="complete-first">
+        🎉 Erster Durchgang abgeschlossen! 🎉<br/>
+        Du hast <span id="wrong-count"></span> falsch beantwortete Fragen.<br/>
+        Klicke „Falsch beantwortete wiederholen“, um sie erneut zu üben.
+      </div>
+      <div class="complete" id="complete-all">
+        🎉 Alle Fragen sind jetzt richtig! 🎉<br/>
+        Klicke „Neu starten“, um von vorne zu beginnen.
+      </div>
+      <div class="hint">Auswahl: 1–4, Nächste: Leertaste</div>
+    </div>
+  </div>
+
+  <script>
+    // Cookie-Helfer
+    function setCookie(n,v,d){
+      let e="";
+      if(d){
+        const dt=new Date();
+        dt.setTime(dt.getTime()+d*86400000);
+        e=";expires="+dt.toUTCString();
+      }
+      document.cookie=n+"="+encodeURIComponent(v)+e+";path=/";
+    }
+    function getCookie(n){
+      const cs=document.cookie.split(";");
+      for(let c of cs){
+        c=c.trim();
+        if(c.startsWith(n+"="))
+          return decodeURIComponent(c.slice(n.length+1));
+      }
+      return null;
+    }
+    function eraseCookie(n){
+      document.cookie=n+"=;Max-Age=-1;path=/";
+    }
+
+    // Quiz-Variablen
+    let originalQuestions = [],
+        questionOrder      = [],
+        quizQs             = [],
+        answered           = [],
+        correct = 0,
+        incorrect = 0,
+        mode = "first";
+
+    // DOM-Refs
+    const qEl      = document.getElementById("question"),
+          aEl      = document.getElementById("answers"),
+          fbEl     = document.getElementById("feedback"),
+          nextBtn  = document.getElementById("next"),
+          retryBtn = document.getElementById("retry-wrong"),
+          rstBtn   = document.getElementById("restart"),
+          stAns    = document.getElementById("stat-answered"),
+          stCor    = document.getElementById("stat-correct"),
+          stInc    = document.getElementById("stat-incorrect"),
+          stRem    = document.getElementById("stat-remaining"),
+          bar      = document.getElementById("progress-fill"),
+          comp1    = document.getElementById("complete-first"),
+          compAll  = document.getElementById("complete-all"),
+          wrongCt  = document.getElementById("wrong-count");
+
+    function shuffle(arr){
+      for(let i=arr.length-1;i>0;i--){
+        const j = Math.floor(Math.random()*(i+1));
+        [arr[i],arr[j]]=[arr[j],arr[i]];
+      }
+    }
+
+    function saveProgress(){
+      setCookie("quizProg", JSON.stringify({
+        order: questionOrder,
+        answered, correct, incorrect, mode
+      }), 7);
+    }
+
+    async function loadQuiz(){
+      try {
+        const res = await fetch("quiz-data.json");
+        if(!res.ok) throw 0;
+        originalQuestions = (await res.json()).questions;
+
+        const ck = getCookie("quizProg");
+        if(ck){
+          try {
+            const o = JSON.parse(ck);
+            if(Array.isArray(o.order)
+               && o.order.length===originalQuestions.length){
+              questionOrder = o.order;
+              answered      = o.answered || [];
+              correct       = o.correct  || 0;
+              incorrect     = o.incorrect|| 0;
+              mode          = o.mode     || "first";
+            } else throw 0;
+          } catch {
+            eraseCookie("quizProg");
+          }
+        }
+        if(!questionOrder.length){
+          questionOrder = originalQuestions.map((_,i)=>i);
+          shuffle(questionOrder);
+          answered=[]; correct=0; incorrect=0; mode="first";
+          saveProgress();
+        }
+        quizQs = questionOrder.map(i=>originalQuestions[i]);
+        updateStats();
+        showQuestion();
+      } catch {
+        qEl.textContent = "Fehler: quiz-data.json nicht gefunden.";
+      }
+    }
+
+    function showQuestion(){
+      // 1. Durchgang fertig?
+      if(mode==="first" && answered.length===quizQs.length){
+        const wrongIdx = quizQs
+          .map((q,i)=>i)
+          .filter(i=>!quizQs[i]._correctFirst);
+        comp1.style.display="block";
+        wrongCt.textContent=wrongIdx.length;
+        retryBtn.style.display = wrongIdx.length?"inline-block":"none";
+        rstBtn.style.display   = "inline-block";
+        nextBtn.style.display  = "none";
+        return;
+      }
+      // Retry fertig?
+      if(mode==="retry" && answered.length===quizQs.length){
+        compAll.style.display="block";
+        rstBtn.style.display="inline-block";
+        nextBtn.style.display="none";
+        return;
+      }
+      // normale Frage
+      comp1.style.display = "none";
+      compAll.style.display = "none";
+      retryBtn.style.display = "none";
+      rstBtn.style.display   = "none";
+      nextBtn.style.display  = "inline-block";
+      nextBtn.disabled       = true;
+      aEl.innerHTML = "";
+      fbEl.className = "feedback";
+      fbEl.textContent = "";
+
+      // nächsten unbeantworteten Index finden
+      let idx=0;
+      while(answered.includes(idx)) idx++;
+      const Q = quizQs[idx];
+      qEl.textContent = Q.question;
+
+      // Antworten mischen
+      const opts = [Q.correctAnswer, ...Q.wrongAnswers];
+      shuffle(opts);
+      opts.forEach((opt,i)=>{
+        const btn = document.createElement("button");
+        btn.textContent    = `${i+1}. ${opt}`;
+        btn.dataset.index = i;
+        btn.dataset.answer= opt;
+        btn.onclick       = ()=>selectAnswer(opt, idx);
+        aEl.appendChild(btn);
+      });
+    }
+
+    function selectAnswer(ans, qIdx){
+      const Q = quizQs[qIdx],
+            correctAns = Q.correctAnswer,
+            right      = ans===correctAns;
+      Q._correctFirst = Q._correctFirst||right;
+
+      aEl.querySelectorAll("button").forEach(btn=>{
+        btn.disabled = true;
+        const optText = btn.dataset.answer;
+        if(optText===ans)
+          btn.classList.add(right?"correct":"incorrect");
+        if(!right && optText===correctAns)
+          btn.classList.add("correct");
+      });
+      fbEl.classList.add("show", right?"correct":"incorrect");
+      fbEl.textContent = right? "Richtig! 👍"
+                              : `Falsch! Richtige Antwort: ${correctAns}`;
+      answered.push(qIdx);
+      if(right) correct++; else incorrect++;
+      saveProgress();
+      updateStats();
+      nextBtn.disabled = false;
+    }
+
+    function updateStats(){
+      const tot = quizQs.length;
+      stAns.textContent = answered.length;
+      stCor.textContent = correct;
+      stInc.textContent = incorrect;
+      stRem.textContent = tot - answered.length;
+      bar.style.width   = (answered.length/tot*100) + "%";
+    }
+
+    function restart(){
+      eraseCookie("quizProg");
+      location.reload();
+    }
+
+    function retryWrong(){
+      const wrongIdx = quizQs
+        .map((q,i)=>i)
+        .filter(i=>!quizQs[i]._correctFirst);
+      if(!wrongIdx.length) return;
+      mode="retry";
+      // Frage-Reihenfolge auf falsch Beantwortete reduzieren
+      questionOrder = wrongIdx.map(i=>questionOrder[i]);
+      quizQs        = questionOrder.map(i=>originalQuestions[i]);
+      answered=[]; correct=0; incorrect=0;
+      saveProgress();
+      updateStats();
+      showQuestion();
+    }
+
+    // Tastatur-Steuerung
+    document.addEventListener("keydown", e=>{
+      if(["INPUT","TEXTAREA"].includes(document.activeElement.tagName)) return;
+      // 1-4 auswählen
+      if(/^[1-4]$/.test(e.key)){
+        const idx = Number(e.key)-1;
+        const btn = aEl.querySelector(`button[data-index="${idx}"]`);
+        if(btn && !btn.disabled) btn.click();
+      }
+      // Leertaste = nächste Frage
+      if(e.key===" "){
+        e.preventDefault();
+        if(!nextBtn.disabled && nextBtn.style.display!=="none"){
+          nextBtn.click();
+        }
+      }
+    });
+
+    // Button-Handler
+    nextBtn.onclick    = showQuestion;
+    rstBtn.onclick     = restart;
+    retryBtn.onclick   = retryWrong;
+
+    // Start
+    loadQuiz();
+  </script>
+</body>
+</html>

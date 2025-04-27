@@ -1,0 +1,536 @@
+{
+    "questions": [
+      {
+        "question": "Was ist die Grundzeit und von wann bis wann wird sie gemessen?",
+        "correctAnswer": "Vom Beginn des Abstiegs bis zum Beginn des Aufstiegs",
+        "wrongAnswers": [
+          "Vom Beginn des Abstiegs bis zum Erreichen der Nullzeit",
+          "Vom Erreichen der maximalen Tiefe bis zum Beginn des Aufstiegs",
+          "Vom Ende des Dekompressionsstops bis zum Austauchen"
+        ]
+      },
+      {
+        "question": "Wo kann ich die Nullzeit für eine bestimmte Tiefe vor dem Tauchgang nachschauen?",
+        "correctAnswer": "Deco-2000-Tabelle, Tauchcomputer oder online (z.B. Subsurface)",
+        "wrongAnswers": [
+          "Im offiziellen U.S. Navy Dekompressionstabellen-Handbuch",
+          "Nur im Atemregler-Benutzerhandbuch",
+          "Auf der Website des Flaschenherstellers ohne Tauchcomputer"
+        ]
+      },
+      {
+        "question": "Was ist das AMV?",
+        "correctAnswer": "Die Menge an Luft, die ein Taucher pro Minute atmet",
+        "wrongAnswers": [
+          "Die maximale Aufstiegsrate in Metern pro Minute",
+          "Die Anzahl der Atemzüge pro Minute",
+          "Das Volumen eines einzelnen Atemzugs"
+        ]
+      },
+      {
+        "question": "Darf man in Österreich in jedem See tauchen?",
+        "correctAnswer": "Nein – in privaten oder Naturschutzgewässern oft nur mit Genehmigung",
+        "wrongAnswers": [
+          "Ja, wenn man einen gültigen EU-Tauchschein besitzt",
+          "Ja, solange man eine lokale Tauchbasis angibt",
+          "Ja, wenn die Sichtweite über 5 m liegt"
+        ]
+      },
+      {
+        "question": "Wie schone ich während des Tauchgangs Flora und Fauna am besten?",
+        "correctAnswer": "Keine Pflanzen oder Tiere berühren und keinen Bodenschlamm aufwirbeln",
+        "wrongAnswers": [
+          "Korallen nur mit Handschuhen anfassen",
+          "Pflanzen nur an den Wurzeln bewegen",
+          "Mit dem Flaschenfuß Bodenproben entnehmen"
+        ]
+      },
+      {
+        "question": "Was sind die 7 Checks vor dem Tauchen?",
+        "correctAnswer": "Umgebungs-, Notfallwege-, Eigen-, Partner-, Luft-, Flossen- und Jacket-Check",
+        "wrongAnswers": [
+          "Maske-, Flossen-, Kompressor-, Funk-, Computer-, Strömungs- und Wetter-Check",
+          "Ausrüstungs-, Buddy-, Sichtweiten-, Strom-, Motor-, GPS- und Kamera-Check",
+          "Tauchplan-, Erste-Hilfe-, Logbuch-, Hafen-, Boot-, Heck- und Rumpf-Check"
+        ]
+      },
+      {
+        "question": "Was wird beim 5-m-Check überprüft?",
+        "correctAnswer": "Funktion von Zweitregler, 1. & 2. Stufe, Blei-Verteilung und Wechsel auf Hauptregler",
+        "wrongAnswers": [
+          "Nur die Flaschenventile auf Dichtigkeit",
+          "Komplettes Ausrüsten nach Erreichen von 5 m Tiefe",
+          "Ausrüstungs-Kalibrierung für den dritten Tauchgang"
+        ]
+      },
+      {
+        "question": "Wie oft wird der Finicheck durchgeführt?",
+        "correctAnswer": "Unmittelbar nach dem 5-m-Check und dann fortlaufend",
+        "wrongAnswers": [
+          "Nur einmal zu Beginn des Tauchgangs",
+          "Nur bei Temperaturschwankungen",
+          "Nur nach jedem Dekompressionsstopp"
+        ]
+      },
+      {
+        "question": "Was ist bei der Planung eines Tauchgangs zu beachten?",
+        "correctAnswer": "Grundzeit, Tauchtiefe, Nullzeit, Luftvorrat und Erfahrung des Partners",
+        "wrongAnswers": [
+          "Nur maximale Tiefe und Wassertemperatur",
+          "Nur Ausrüstungsgewicht und GPS-Koordinaten",
+          "Nur Kompressorleistung und Funkreichweite"
+        ]
+      },
+      {
+        "question": "Was muss der Tauchgangsleiter unbedingt festlegen?",
+        "correctAnswer": "Grundzeit und maximale Tauchtiefe",
+        "wrongAnswers": [
+          "Nur die Parkzeit des Tauchfahrzeugs",
+          "Nur die Nummer der Rettungsboje",
+          "Nur die Fürsorgepflicht im Hafenbereich"
+        ]
+      },
+      {
+        "question": "Was muss der Gruppenleiter über die Ausrüstung der Teilnehmer wissen?",
+        "correctAnswer": "Flaschendruck und Volumen",
+        "wrongAnswers": [
+          "Nur die Farbe und das Gewicht der Flasche",
+          "Nur das Herstellungsjahr der Ausrüstung",
+          "Nur die Marke der Tauchflaschen"
+        ]
+      },
+      {
+        "question": "Was tun, wenn beim Abtauchen der Druckausgleich nicht funktioniert?",
+        "correctAnswer": "Langsam steigen, noch einmal probieren, sonst Auftauchen",
+        "wrongAnswers": [
+          "Sofort fünf Minuten auf 3 m verweilen",
+          "Mit leerem Jacket weiter abtauchen",
+          "Die Ohren mit lauter Musik ablenken"
+        ]
+      },
+      {
+        "question": "Welches Verhalten in tropischen Gebieten ist richtig?",
+        "correctAnswer": "Unterwasser frei bewegen und keine Korallen oder Tiere berühren",
+        "wrongAnswers": [
+          "Fische mit Brotkrumen füttern",
+          "Sand von Korallen abklopfen",
+          "Muscheln als Souvenir einsammeln"
+        ]
+      },
+      {
+        "question": "Was muss man machen, wenn der Tauchpartner verloren geht?",
+        "correctAnswer": "Ca. 60 Sek. suchen, dann kontrolliert auftauchen",
+        "wrongAnswers": [
+          "Sofort Not-Surfacing durchführen",
+          "Den Tauchgang ohne Rücksicht fortsetzen",
+          "Einen SOS-Funkruf absetzen und weiter tauchen"
+        ]
+      },
+      {
+        "question": "Was tun, wenn der Regler des Partners ausfällt?",
+        "correctAnswer": "Dem Partner die ALV anbieten und gemeinsam auftauchen",
+        "wrongAnswers": [
+          "Allein auftauchen lassen und weitermachen",
+          "Den defekten Regler selbst reparieren",
+          "Die Flasche komplett entleeren"
+        ]
+      },
+      {
+        "question": "Wie viel Luft verbraucht ein geübter Taucher in 18 m Tiefe bei 20 l/min AMV?",
+        "correctAnswer": "56 l/min",
+        "wrongAnswers": [
+          "52 l/min",
+          "64 l/min",
+          "48 l/min"
+        ]
+      },
+      {
+        "question": "Was ist an einem naturbelassenen See besonders zu beachten?",
+        "correctAnswer": "Kein Sediment aufwirbeln und keine Pflanzen beschädigen",
+        "wrongAnswers": [
+          "Nur in ausgewiesenen Segelrouten tauchen",
+          "Nur am Ufer in flachem Wasser bleiben",
+          "Nur mit speziellen Benzintauchern schwimmen"
+        ]
+      },
+      {
+        "question": "Was kann man während des Auftauchens zur Sicherheit tun?",
+        "correctAnswer": "Sicherheitsstopps verlängern",
+        "wrongAnswers": [
+          "Deutlich schneller auftauchen",
+          "Mit ausgestrecktem Bein Puffer bilden",
+          "Maske abnehmen und tief einatmen"
+        ]
+      },
+      {
+        "question": "Welche Aufgaben hat der Tauchgruppenführer?",
+        "correctAnswer": "Gruppe zusammenhalten, orientieren, Tauchzeit überwachen",
+        "wrongAnswers": [
+          "Nur Ausrüstung transportieren",
+          "Nur Logbuch führen",
+          "Nur Notfallboje werfen"
+        ]
+      },
+      {
+        "question": "Welches Verhalten an und in Tauchgewässern ist falsch?",
+        "correctAnswer": "Leinen an Wasserpflanzen nicht hängen lassen (müssen entfernt werden)",
+        "wrongAnswers": [
+          "Nur beleuchtete Bereiche betreten",
+          "Naturpflanzen als Versteck verwenden",
+          "Sedimente bewusst aufwirbeln"
+        ]
+      },
+      {
+        "question": "Wie verändert sich das Volumen eines Neoprenanzugs beim Abtauchen?",
+        "correctAnswer": "Es nimmt ab (zieht sich zusammen)",
+        "wrongAnswers": [
+          "Es dehnt sich aufgrund des Wasserdrucks aus",
+          "Es bleibt unverändert",
+          "Es ändert sich nur bei Temperaturwechsel"
+        ]
+      },
+      {
+        "question": "Mit welcher Kennzeichnung müssen Pressluftflaschen in Österreich versehen sein?",
+        "correctAnswer": "50/50 Schwarz/Weiß an der Schulter",
+        "wrongAnswers": [
+          "Komplett Gelb",
+          "Komplett Rot",
+          "Grün/Weiß gestreift"
+        ]
+      },
+      {
+        "question": "Welche Funktionen hat ein Tauchcomputer?",
+        "correctAnswer": "Zeigt Temperatur, Tiefe, Tauchzeit, Nullzeit und Oberflächenpause an",
+        "wrongAnswers": [
+          "Zeigt nur Tiefe und Uhrzeit an",
+          "Misst Kompasskurs und Strömungsgeschwindigkeit",
+          "Misst nur den Luftverbrauch"
+        ]
+      },
+      {
+        "question": "Wozu dient die erste Stufe eines Zweistufenreglers?",
+        "correctAnswer": "Reduziert Flaschendruck auf Mitteldruck",
+        "wrongAnswers": [
+          "Reduziert Mitteldruck auf Umgebungsdruck",
+          "Mischt Sauerstoff und Stickstoff",
+          "Filtert Öl- und Wasserrückstände"
+        ]
+      },
+      {
+        "question": "Was ist bei einem Kompressor zu beachten?",
+        "correctAnswer": "Kondensat ablassen und Ansaugschlauch so platzieren, dass keine Abgase angesaugt werden",
+        "wrongAnswers": [
+          "Nur den Zahnriemen prüfen",
+          "Nur die Kühlwasser-Temperatur messen",
+          "Nur den Öldruck überwachen"
+        ]
+      },
+      {
+        "question": "Wozu dient die zweite Stufe eines Zweistufenreglers?",
+        "correctAnswer": "Reduziert Mitteldruck auf Umgebungsdruck",
+        "wrongAnswers": [
+          "Reduziert Flaschendruck auf Mitteldruck",
+          "Filtert Verunreinigungen aus der Luft",
+          "Mischt das Atemgas"
+        ]
+      },
+      {
+        "question": "Wie müssen Druckbehälter bei längerer Lagerung stehen?",
+        "correctAnswer": "Stehend mit geringem Restdruck und gegen Umfallen gesichert",
+        "wrongAnswers": [
+          "Liegend ohne Restdruck",
+          "Hängend unter Wasser",
+          "Stehend bei vollem Fülldruck"
+        ]
+      },
+      {
+        "question": "Was braucht eine Tauchgruppe im Meer statt im Süßwasser?",
+        "correctAnswer": "Mehr Blei",
+        "wrongAnswers": [
+          "Weniger Blei",
+          "Spezielle Heliumflaschen",
+          "Wärmere Neoprenanzüge"
+        ]
+      },
+      {
+        "question": "Wie viel Blei muss man mitführen, um richtig zu tarieren?",
+        "correctAnswer": "So viel, dass man mit voller Flasche, leerem Jacket und eingeatmet bis zu den Augen einsinkt und ausgeatmet untergeht",
+        "wrongAnswers": [
+          "Genau 5 kg pro 10 m Tiefe",
+          "Nur so viel, dass man bei vollem Jacket schweben kann",
+          "So wenig, dass man immer am Grund liegt"
+        ]
+      },
+      {
+        "question": "Was muss ein Gruppenleiter bei sich haben?",
+        "correctAnswer": "Finimeter, Tiefenmesser, Uhr und Kompass",
+        "wrongAnswers": [
+          "Nur einen Tauchcomputer",
+          "Nur eine Signalboje",
+          "Nur ein Unterwassermesser"
+        ]
+      },
+      {
+        "question": "Wie behandelt man die Ausrüstung nach einem Meertauchgang?",
+        "correctAnswer": "Stufen mit Süßwasser unter Druck abspülen, Rest einfach mit Süßwasser reinigen",
+        "wrongAnswers": [
+          "Mit Salzwasser abspülen und in die Sonne legen",
+          "Mit Seifenlauge reinigen",
+          "Nur mit Druckluft trocknen lassen"
+        ]
+      },
+      {
+        "question": "Wie sollten Druckbehälter im Auto transportiert werden?",
+        "correctAnswer": "Quer und gegen Verrutschen gesichert",
+        "wrongAnswers": [
+          "Stehend und ungesichert",
+          "Liegend ohne Sicherung",
+          "Hängend am Rückspiegel"
+        ]
+      },
+      {
+        "question": "Was ist beim Spülen eines Atemreglers besonders zu beachten?",
+        "correctAnswer": "Kein Wasser darf in den Regler eindringen",
+        "wrongAnswers": [
+          "Er muss vollständig unter Wasser laufen",
+          "Er muss beim Spülen gefüllt sein",
+          "Man muss ihn zerlegen und spülen"
+        ]
+      },
+      {
+        "question": "Was sind die Aufgaben eines Tariermittels?",
+        "correctAnswer": "Tarierung unter Wasser und Schwimmhilfe über Wasser",
+        "wrongAnswers": [
+          "Nur zum Kälteschutz",
+          "Nur zur Aufbewahrung von Gewicht",
+          "Nur als Notauftrieb bei Tauchtiefen über 30 m"
+        ]
+      },
+      {
+        "question": "Wann muss man den Druckausgleich durchführen?",
+        "correctAnswer": "Beim Ab- und Auftauchen, bevor Druckgefühl in Ohren oder Nebenhöhlen entsteht",
+        "wrongAnswers": [
+          "Nur bei Abtauchen unter 10 m",
+          "Nur wenn es weh tut",
+          "Nur nach jedem Dekompressionsstop"
+        ]
+      },
+      {
+        "question": "Wie führt man den Druckausgleich durch?",
+        "correctAnswer": "Durch Schlucken oder Valsalva-Methode (Luft in die Nase blasen bei geschlossenem Mund und Nasenlöchern)",
+        "wrongAnswers": [
+          "Durch kräftiges Kopfschütteln",
+          "Durch Ausstoßen von Luft durch den Mund",
+          "Durch starkes Niesen"
+        ]
+      },
+      {
+        "question": "Was ist ein Barotrauma?",
+        "correctAnswer": "Verletzung durch Druckunterschiede, z.B. in Ohren, Lunge oder Nebenhöhlen",
+        "wrongAnswers": [
+          "Schnittwunde durch scharfe Korallen",
+          "Sonnenbrand am Meeresboden",
+          "Stromschlag durch Unterwasserkabel"
+        ]
+      },
+      {
+        "question": "Wozu dient eine Tauchermaske?",
+        "correctAnswer": "Um unter Wasser klar sehen zu können und die Augen vor Reizungen zu schützen",
+        "wrongAnswers": [
+          "Um UV-Strahlung über Wasser zu blockieren",
+          "Um das Gehör unter Wasser zu verstärken",
+          "Um den Luftverbrauch zu reduzieren"
+        ]
+      },
+      {
+        "question": "Wozu dient ein Tauchermesser?",
+        "correctAnswer": "Zum Befreien aus Netzen, Schnüren oder Algen",
+        "wrongAnswers": [
+          "Zum Zerteilen von Fischen",
+          "Zum Entfernen von Muschelschalen für Souvenirs",
+          "Zum Graben nach Bodenschätzen"
+        ]
+      },
+      {
+        "question": "Wie berechnet man den Luftverbrauch für einen Tauchgang?",
+        "correctAnswer": "Bar × Zeit × AMV = Liter",
+        "wrongAnswers": [
+          "Tiefe × Zeit × AMV = Liter",
+          "Bar × Tiefe × Flaschengröße = Liter",
+          "Zeit × Flaschendruck = Liter"
+        ]
+      },
+      {
+        "question": "Was bedeutet TG 200, PH 300 auf einem Druckbehälter?",
+        "correctAnswer": "Höchstzulässiger Fülldruck 200 bar",
+        "wrongAnswers": [
+          "Tauchtiefe 200 m, Prüfhöhe 300 m",
+          "Herstellungsjahr 2000, Prüfdruck 300 bar",
+          "Temperaturgrenze 200 °C, pH-Wert 3,00"
+        ]
+      },
+      {
+        "question": "Was ist ein Vereiser und wie entsteht er?",
+        "correctAnswer": "Vereisung der ersten/zweiten Stufe durch schnelle Abkühlung von feuchter Luft",
+        "wrongAnswers": [
+          "Werkzeug zum Entfernen von Eis am Flaschenventil",
+          "Erkrankung durch Kälteeinwirkung am Körper",
+          "Zusatzgerät zur aktiven Luftkühlung"
+        ]
+      },
+      {
+        "question": "Wie hoch ist der Mitteldruck in einem Atemregler?",
+        "correctAnswer": "10 bar + Umgebungsdruck",
+        "wrongAnswers": [
+          "5 bar + Umgebungsdruck",
+          "20 bar + Umgebungsdruck",
+          "Flaschendruck − 10 bar"
+        ]
+      },
+      {
+        "question": "Worauf muss man bei der Verwendung eines Kompressors achten?",
+        "correctAnswer": "Kondensat ablassen und Ansaugschlauch so platzieren, dass keine Abgase angesaugt werden",
+        "wrongAnswers": [
+          "Nur die Lautstärke prüfen",
+          "Nur den Stromverbrauch messen",
+          "Nur den Öldruck überwachen"
+        ]
+      },
+      {
+        "question": "Was kann passieren, wenn Abgase wieder in die Atemluft gelangen?",
+        "correctAnswer": "CO-Vergiftung",
+        "wrongAnswers": [
+          "Stickstoffnarkose",
+          "Sauerstoffvergiftung",
+          "Dekompressionskrankheit"
+        ]
+      },
+      {
+        "question": "Wie sollte die Konfiguration der Atemregler sein?",
+        "correctAnswer": "Erste Stufe → Hauptregler; Zweite Stufe → Zweitregler; Finimeter; Jacket-Anschluss",
+        "wrongAnswers": [
+          "Beide Regler an derselben Stufe betreiben",
+          "Nur eine Stufe für alle Leinen verwenden",
+          "Hauptregler auf Zweitstufe und Zweitregler auf Erststufe umkehren"
+        ]
+      },
+      {
+        "question": "Wann signalisiert der Körper Atemnot?",
+        "correctAnswer": "Wenn zu viel CO₂ im Körper ist",
+        "wrongAnswers": [
+          "Wenn der Stickstoffpartialdruck zu niedrig ist",
+          "Wenn der Sauerstoffpartialdruck zu hoch ist",
+          "Wenn der Wasserdruck zu stark steigt"
+        ]
+      },
+      {
+        "question": "Was sind die Symptome eines Deko-Traumas?",
+        "correctAnswer": "Gelenksschmerzen, Juckreiz, Schwindel",
+        "wrongAnswers": [
+          "Nur Kurzatmigkeit und Husten",
+          "Nur Bewusstlosigkeit",
+          "Nur Muskelkrämpfe der Arme"
+        ]
+      },
+      {
+        "question": "Was ist zu tun, wenn ein Taucher stark blutet und kalten Schweiß im Gesicht hat?",
+        "correctAnswer": "Blutung stoppen, hinlegen + Beine hochlagern, Notruf absetzen",
+        "wrongAnswers": [
+          "Taucher ins Wasser zurückführen",
+          "Wunde nur mit Salzwasser ausspülen",
+          "Kreislauf mit Kältepack behandeln"
+        ]
+      },
+      {
+        "question": "Was sind die Symptome einer CO-Vergiftung?",
+        "correctAnswer": "Hellrotes Gesicht, Kopfschmerzen, Atemnot, Ohrensausen",
+        "wrongAnswers": [
+          "Bläuliche Hautverfärbung und Erbrechen",
+          "Grüner Hautausschlag und Durst",
+          "Blasses Gesicht und starke Müdigkeit"
+        ]
+      },
+      {
+        "question": "Was sind die Ursachen einer Dekompressionskrankheit?",
+        "correctAnswer": "Zu viel Stickstoff im Gewebe und Blut",
+        "wrongAnswers": [
+          "Zu viel Sauerstoff im Blut",
+          "Zu wenig CO₂ im Körper",
+          "Zu schneller Herzschlag unter Wasser"
+        ]
+      },
+      {
+        "question": "Wie stellt man einen Herzstillstand fest und was ist zu tun?",
+        "correctAnswer": "Atmung prüfen; 5 initiale Beatmungen, dann 30:2 Herzdruckmassage",
+        "wrongAnswers": [
+          "Nur den Puls fühlen und sofort beatmen",
+          "Nur Bewusstsein prüfen und Rettungswagen rufen",
+          "Nur die Pupillenreaktion testen"
+        ]
+      },
+      {
+        "question": "Was tun bei Verdacht auf Überhitzung in den Tropen?",
+        "correctAnswer": "An einen kühlen Ort bringen, Tauchanzug ausziehen, kühlen (z.B. kühle Getränke)",
+        "wrongAnswers": [
+          "Mit warmem Wasser abspülen",
+          "Sofort wieder in heißes Wasser steigen",
+          "Heiße Getränke verabreichen"
+        ]
+      },
+      {
+        "question": "Was ist der Totraum bei der Atmung?",
+        "correctAnswer": "1,5 L Totraum; 4,5 L aktiv verwendbar bei 6 L Gesamtvolumen",
+        "wrongAnswers": [
+          "Luftvolumen in der Maske",
+          "Volumen des Lungenflügels ohne Gasaustausch",
+          "Volumen zwischen Lunge und Blutkreislauf"
+        ]
+      },
+      {
+        "question": "Woran erkennt man einen Schockzustand?",
+        "correctAnswer": "Person ist blass, schwitzt, fühlt sich schlecht, hat hohen Puls, kühle Haut",
+        "wrongAnswers": [
+          "Person ist gerötet, lacht viel, hat niedrigen Puls",
+          "Person hat einen roten Ausschlag und Frieren",
+          "Person zeigt Euphorie und rote Lippen"
+        ]
+      },
+      {
+        "question": "Was ist wahrscheinlich passiert, wenn ein Partner Probleme mit dem Druckausgleich hat und verwirrt wirkt?",
+        "correctAnswer": "Wahrscheinlich Trommelfellriss",
+        "wrongAnswers": [
+          "Stickstoffnarkose",
+          "CO₂-Überschuss (Hyperkapnie)",
+          "Unterkühlung des Innenohres"
+        ]
+      },
+      {
+        "question": "Was ist passiert, wenn nach dem Tauchgang rote Augen auftreten?",
+        "correctAnswer": "Masken-Barotrauma durch unzureichenden Druckausgleich",
+        "wrongAnswers": [
+          "Salzwasserallergie",
+          "UV-Reflexion im Wasser",
+          "Chlorunverträglichkeit"
+        ]
+      },
+      {
+        "question": "Wie erkennt man einen Kreislaufstillstand?",
+        "correctAnswer": "Keine Atmung feststellen (sehen, hören, fühlen)",
+        "wrongAnswers": [
+          "Nur durch Blutdruckmessung",
+          "Nur durch Pupillenkontrolle",
+          "Nur durch Hauttemperatur"
+        ]
+      },
+      {
+        "question": "Welche Maßnahmen sind bei Verdacht auf eine Dekompressionskrankheit zu ergreifen?",
+        "correctAnswer": "Aus dem Wasser nehmen, Sauerstoff geben, Person beobachten, Rettung rufen",
+        "wrongAnswers": [
+          "Sofort wieder abtauchen und Retentionsstopps durchführen",
+          "Nur mit lauwarmem Wasser kühlen",
+          "Intravenöse Kochsalzlösung verabreichen"
+        ]
+      }
+    ]
+  }
+  
